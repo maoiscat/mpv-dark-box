@@ -6,15 +6,15 @@
 
 预览1
 
-![预览1](https://github.com/maoiscat/mpv-darkbox/blob/main/preview1.png)
+![预览1](https://github.com/maoiscat/mpv-dark-box/blob/main/preview1.png)
 
 预览2
 
-![预览2](https://github.com/maoiscat/mpv-darkbox/blob/main/preview2.png)
+![预览2](https://github.com/maoiscat/mpv-dark-box/blob/main/preview2.png)
 
 ## 使用方法
 
-1. 下载mpv-darkbox.lua，放置在scripts目录
+1. 下载mpv-dark-box.lua，放在scripts目录
 2. 在mpv.conf中配置osc=no
 3. 运行
 
@@ -25,6 +25,7 @@
 1. font     --配置OSC字体
 2. layout   --该脚本只有default一种风格
 3. logotext --启动时LOGO下显示的文字，支持ASS格式代码
+4. 圣诞帽被移除了
 
 ## 配置方案
 ### mpv.conf
