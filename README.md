@@ -14,7 +14,7 @@
 
 ## 使用方法
 
-1. 下载mpv-dark-box.lua，放在scripts目录
+1. 下载dark-box.lua，放在scripts目录
 2. 在mpv.conf中配置osc=no
 3. 运行
 
