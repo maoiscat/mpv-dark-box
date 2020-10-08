@@ -27,7 +27,7 @@
 3. logotext --启动时LOGO下显示的文字，支持ASS格式代码
 4. 圣诞帽被移除了
 
-## 配置方案
+## 预览图的配置方案
 ### mpv.conf
 ```
 osc=no
@@ -44,5 +44,4 @@ geometry=640
 font=Consolas
 logotext={\\1c&H00\\bord0\\fs30\\fnconsolas\\fn微软雅黑 light\\fscx125}MPV{\\fscx100} 播放器
 ```
-### 其它
-可选自行把mpv.exe的图标替换成空白图标
+另外自行把mpv.exe的图标替换成空白图标就实现一致效果。
