@@ -2178,7 +2178,7 @@ function tick()
 
         -- render idle message
         msg.trace("idle message")
-        local icon_x, icon_y = 240, 70
+        local icon_x, icon_y = 243, 70
         local line_prefix = ("{\\rDefault\\an7\\1a&H00&\\bord0\\shad0\\pos(%f,%f)\\fscx300\\fscy300}"):format(icon_x, icon_y)
 
         local ass = assdraw.ass_new()
