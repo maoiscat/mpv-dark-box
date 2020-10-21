@@ -1,6 +1,6 @@
 -- by maoiscat
 -- email:valarmor@163.com
--- https://github.com/maoiscat/mpv-darkbox/
+-- https://github.com/maoiscat/mpv-dark-box/
 
 local assdraw = require 'mp.assdraw'
 local msg = require 'mp.msg'
