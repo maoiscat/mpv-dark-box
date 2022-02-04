@@ -28,8 +28,10 @@
 4. 圣诞帽被移除了
 
 ## 预览图的配置方案
+
 ### mpv.conf
-```
+
+```conf
 osc=no
 [Auto.Idle]
 profile-cond=p["idle-active"]
@@ -39,9 +41,12 @@ title=' '
 background=1.0
 geometry=640
 ```
+
 ### osc.conf
-```
+
+```conf
 font=Consolas
 logotext={\\1c&H00\\bord0\\fs30\\fn微软雅黑 light\\fscx125}MPV{\\fscx100} 播放器
 ```
+
 另外自行把mpv.exe的图标替换成空白图标就实现一致效果。

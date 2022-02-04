@@ -37,15 +37,15 @@ local user_opts = {
 	font = "mpv-osd-symbols",	-- default osc font
     layout = "default",			-- default only!!
     seekbarstyle = "knob",      -- bar, diamond or knob
-    seekbarhandlesize = 3,	-- size ratio of the diamond and knob handle
+    seekbarhandlesize = 3,	    -- size ratio of the diamond and knob handle
     seekrangestyle = "bar",		-- bar, line, slider, inverted or none
     seekrangeseparate = true,   -- wether the seekranges overlay on the bar-style seekbar
     seekrangealpha = 200,       -- transparency of seekranges
     seekbarkeyframes = true,    -- use keyframes when dragging the seekbar
-    title = "　${media-title}",   -- string compatible with property-expansion
+    title = "　${media-title}", -- string compatible with property-expansion
                                 -- to be shown as OSC title
     tooltipborder = 1,          -- border of tooltip in bottom/topbar
-    timetotal = true,          -- display total time instead of remaining time?
+    timetotal = true,           -- display total time instead of remaining time?
     timems = false,             -- display timecodes with milliseconds?
     visibility = "auto",        -- only used at init to set visibility_mode(...)
     boxmaxchars = 44,           -- title crop threshold for box layout
@@ -77,7 +77,7 @@ local osc_styles = {
     cyDigit = "{\\fn" .. user_opts.font .. "}",
     divA = "{\\blur0\\bord0\\1c&H161211\\3c&HFFFFFF\\fs16\\fnmpv-osd-symbols}",
     divB = "{\\blur0\\bord0\\1c&H8E807D\\3c&HFFFFFF\\fs16\\fnmpv-osd-symbols}",
-    bgBox = "{\\rDefault\\blur0\\bord0\\1c&H292120\\3c&HFFFFFF}",	
+    bgBox = "{\\rDefault\\blur0\\bord0\\1c&H292120\\3c&HFFFFFF}",
     fgSeekbar = "{\\blur0\\bord0\\1c&H00E1FA\\3c&HFFFFFF\\fs13}",
     tpSeekbar = "{\\blur2\\bord".. user_opts.tooltipborder .."\\1c&HFFFFFF\\3c&H000000\\fs18}",
     bgSeekbar = "{\\blur0\\bord0\\1c&H7B6864\\3c&HFFFFFF\\fs13\\q2}",
@@ -85,7 +85,7 @@ local osc_styles = {
     wcButtons = "{\\1c&HFFFFFF\\fs24\\fnmpv-osd-symbols}",
     wcTitle = "{\\1c&HFFFFFF\\fs18\\q2}",
     wcBar = "{\\1c&H292120}",
-	
+
     elementDown = "{\\1c&H999999}",
 }
 
@@ -809,7 +809,7 @@ function render_elements(master_ass)
             elseif not (element.content == nil) then
                 buttontext = element.content -- text objects
             end
-			
+
 			buttontext = buttontext:gsub(":%((.?.?.?)%) unknown ", ":%(%1%)")  --gsub("%) unknown %(\"", "")
 
             local maxchars = element.layout.button.maxchars
@@ -1225,12 +1225,12 @@ layouts["default"] = function ()
 	local refX = posX - pos_offsetX - osc_p
 	local refY = posY - pos_offsetY - osc_p
 
-	
+
     --
     -- Seekbar
     --
 	geo ={x = refX + osc_geo.w/2 , y = refY + 14 , an = 5, w = osc_geo.w - 20, h = 9}
- 
+
     new_element("bgbar1", "box")
     lo = add_layout("bgbar1")
 
@@ -1253,7 +1253,7 @@ layouts["default"] = function ()
     lo.slider.tooltip_an = 2
     lo.slider.stype = user_opts["seekbarstyle"]
     lo.slider.rtype = user_opts["seekrangestyle"]
-    
+
 	-- seekbar-control dividor
 	geo ={x = refX + osc_geo.w / 2 , y = refY + 28 , an = 5, w = osc_geo.w - 20, h = 1}
     new_element("bgbar2", "box")
@@ -1270,27 +1270,27 @@ layouts["default"] = function ()
 
 	lo = add_layout("skipback")
     lo.geometry = {x = refX + 48, y = refY + 47 , an = 5, w = 26, h = 30}
-    lo.style = osc_styles.s24Button	
+    lo.style = osc_styles.s24Button
 
-			
+
     lo = add_layout("skipfrwd")
     lo.geometry = {x = refX + 72, y = refY + 47 , an = 5, w = 26, h = 30}
-    lo.style = osc_styles.s24Button	
+    lo.style = osc_styles.s24Button
 
     lo = add_layout("pl_prev")
     lo.geometry = {x = refX + 96, y = refY + 47 , an = 5, w = 26, h = 30}
-    lo.style = osc_styles.s24Button		
+    lo.style = osc_styles.s24Button
 
     lo = add_layout("pl_next")
     lo.geometry = {x = refX + 120, y = refY + 47 , an = 5, w = 26, h = 30}
-    lo.style = osc_styles.s24Button	
+    lo.style = osc_styles.s24Button
 
 
 	-- Time
     lo = add_layout("tc_left")
     lo.geometry = {x = refX + 182, y = refY + 47, an = 5, w = 110, h = 20}
-    lo.style = osc_styles.s16Button	
-	
+    lo.style = osc_styles.s16Button
+
 	geo ={x = refX + 224 , y = refY + 47, an = 5, w = 2, h = 11}
 	new_element("bgbar3", "box")
     lo = add_layout("bgbar3")
@@ -1298,16 +1298,16 @@ layouts["default"] = function ()
     lo.layer = 13
     lo.style = osc_styles.divB
     lo.alpha[1] = math.min(255, user_opts.boxalpha + (255 - user_opts.boxalpha)*0.05)
-		
+
     lo = add_layout("tc_right")
     lo.geometry = {x = refX + 266 , y = refY + 47, an = 5, w = 64, h = 20}
-    lo.style = osc_styles.s16Button	
+    lo.style = osc_styles.s16Button
 
-	
+
 	-- Media title
 	lo = add_layout("title")
     lo.geometry = {x = refX + 310  , y = refY + 47 , an = 4, w = 370, h = 20}
-    lo.style = osc_styles.s16Button	
+    lo.style = osc_styles.s16Button
     lo.button.maxchars = user_opts.boxmaxchars
 
     lo = add_layout("cy_audio")
