@@ -1311,13 +1311,16 @@ layouts["default"] = function ()
     lo.button.maxchars = user_opts.boxmaxchars
 
     lo = add_layout("cy_audio")
-    lo.geometry = {x = refX + osc_geo.w - 135, y = refY + 47, an = 4, w = 64, h = 30}
-    lo.style = osc_styles.cyButton	
-
-    lo = add_layout("cy_sub")
-    lo.geometry = {x = refX + osc_geo.w - 70, y = refY + 47, an = 4, w = 64, h = 30}
+    lo.geometry = {x = refX + osc_geo.w - 145, y = refY + 47, an = 4, w = 64, h = 30}
     lo.style = osc_styles.cyButton
 
+    lo = add_layout("cy_sub")
+    lo.geometry = {x = refX + osc_geo.w - 85, y = refY + 47, an = 4, w = 64, h = 30}
+    lo.style = osc_styles.cyButton
+
+    lo = add_layout("volume")
+    lo.geometry = {x = refX + osc_geo.w - 25, y = refY + 47, an = 4, w = 64, h = 30}
+    lo.style = osc_styles.cyButton
 end
 
 -- Validate string type user options
